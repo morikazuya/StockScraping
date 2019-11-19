@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.ns/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+		<link th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}" rel="stylesheet"></link>
+		<script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+		<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+		<link th:href="@{/css/home.css}" rel="stylesheet"></link>
+	<title>Hello</title>
+</head>
+<body>
+	<!-- =====ヘッダー　（ナビゲーションバー）===== -->
+		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Hello Fumio</a>
+				</div>
+				<form method="post" th:action="@{/login}">
+					<button class="btn btn-link pull-right navbar-brand" type="submit">ログイン</button>
+				</form>
+			</div>
+		</nav>
+	
+		<h2>日経平均株価</h2>
+			<div class="page-header"></div>
+			<table class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th class="table-info scope=col">本日</th>
+						<th class="table-info scope=col">始値</th>
+						<th class="table-info scope=col">高値</th>
+						<th class="table-info scope=col">安値</th>
+						<th class="table-info scope=col">終値</th>
+						<th class="table-info scope=col">前日比</th>
+						<th class="table-info scope=col">前日比％</th>
+						<th class="table-info scope=col">売買高(株)</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td th:text="${today}"></td>
+						<td th:text="${openingQuotation}"></td>
+						<td th:text="${high}"></td>
+						<td th:text="${low}"></td>
+						<td th:text="${closingQuotation}"></td>
+						<td th:text="${dayOverDayChanges}"></td>
+						<td th:text="${dayOverDayChangesPercent}"></td>
+						<td th:text="${turnover}"></td>
+					</tr>
+				</tbody>
+			</table>
+</body>
+</html>
