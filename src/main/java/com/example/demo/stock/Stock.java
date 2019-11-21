@@ -11,6 +11,8 @@ public class Stock {
 	private String dayOverDayChangesPercent;//前日比％
 	private String turnover;//売買高(株)
 	
+	private int kabuka;
+	
 	public String getToday() {
 		return today;
 	}
@@ -58,6 +60,12 @@ public class Stock {
 	}
 	public void setTurnover(String turnover) {
 		this.turnover = turnover;
+	}
+	public double getKabuka() {
+		return kabuka;
+	}
+	public void setKabuka(int kabuka) {
+		this.kabuka = kabuka;
 	}
 	
 }

@@ -6,20 +6,20 @@
 		<script th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
 		<script th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 		<link th:href="@{/css/home.css}" rel="stylesheet"></link>
-	<title>Hello</title>
+	<title>index</title>
 </head>
 <body>
-	<!-- =====ヘッダー　（ナビゲーションバー）===== -->
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Hello Fumio</a>
-				</div>
-				<form method="post" th:action="@{/login}">
-					<button class="btn btn-link pull-right navbar-brand" type="submit">ログイン</button>
-				</form>
+<!-- =====ヘッダー　（ナビゲーションバー）===== -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">$$$ My Trade $$$</a>
 			</div>
-		</nav>
+			<form method="post" th:action="@{/login}">
+				<button class="btn btn-link pull-right navbar-brand" type="submit">ログイン</button>
+			</form>
+		</div>
+	</nav>
 	
 		<h2>日経平均株価</h2>
 			<div class="page-header"></div>
@@ -49,5 +49,8 @@
 					</tr>
 				</tbody>
 			</table>
+		<form method="post" th:action="@{/input}">
+			<button class="btn btn-link pull-right navbar-brand" type="submit">お試し機能：利益計算（簡易計算）</button>
+		</form>
 </body>
 </html>
