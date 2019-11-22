@@ -18,7 +18,7 @@
 		</div>
 	</nav>
 	<h2>入力フォーム</h2>
-	<form action="output" method="post">
+	<form method="post" th:action="@{/output}">
 		銘柄番号: <input type="text" name="x" /><br />
 		    購入額: <input type="text" name="b" /><br />
 		    購入数: <input type="text" name="c" /><br />

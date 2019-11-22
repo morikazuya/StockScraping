@@ -17,12 +17,15 @@
 			</form>
 		</div>
 	</nav>
-	<h2>計算結果</h2>
+	<h2>あなたの資産</h2>
 	<p>
 		(<span th:text="${a}">a</span>-<span th:text="${b}">b</span>)*<span th:text="${c}">c</span>=<span th:text="${total}">total</span>
 	</p>
 	<p>
 		現在あなたは、<span th:text="${total}">total</span>円　得をしています
 	</p>
+		<form method="post" th:action="@{/index}">
+			<button class="btn btn-link  navbar-brand" type="submit">お試し終了</button>
+		</form>
 </body>
 </html>
