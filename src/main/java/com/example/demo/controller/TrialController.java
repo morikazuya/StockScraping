@@ -54,6 +54,6 @@ public class TrialController {
 	        modelMap.addAttribute("c", c);
 	        modelMap.addAttribute("total", total);
 		
-		return "/output.html";
+		return "output";
     }
 }

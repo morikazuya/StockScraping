@@ -53,6 +53,6 @@ public class IndexController {
 		model.addAttribute("dayOverDayChangesPercent", stock.getDayOverDayChangesPercent());
 		model.addAttribute("turnover", stock.getTurnover());
 
-		return "/index.html";
+		return "index";
 	}
 }
