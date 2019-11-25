@@ -18,7 +18,7 @@ public class TrialController {
 
     @RequestMapping("/input")
     public String input() {
-        return "/input.html";
+        return "input";
     }
     
 
