@@ -16,3 +16,13 @@ CREATE TABLE IF NOT EXISTS m_user(
 	marriage BOOLEAN,
 	role VARCHAR(50)
 );
+
+/* 株マスタ */
+CREATE TABLE IF NOT EXISTS m_stock(
+	stock_brand VARCHAR(4) PRIMARY KEY,
+	stock_name VARCHAR(50),
+	stock_amount INT,
+	stock_num INT,
+	stock_pl INT,
+	stock_hold BOOLEAN
+);

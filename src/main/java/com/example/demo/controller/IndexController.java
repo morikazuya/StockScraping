@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.stock.Stock;
+import com.example.demo.stock.sample.StockSample;
 
 @Controller
 public class IndexController {
@@ -23,7 +23,7 @@ public class IndexController {
 			Document document = Jsoup.connect("https://kabutan.jp/stock/kabuka?code=0000&ashi=day&page=1").get();
 			Elements elements = document.select("table.stock_kabuka0 tbody");
 			
-			List<Stock> list = new ArrayList<Stock>();
+			List<StockSample> list = new ArrayList<StockSample>();
 			
 			String str = null;
 			
@@ -32,7 +32,7 @@ public class IndexController {
 			}
 			
 			String hairetsu[] = str.split(" ");
-			Stock stock = new Stock();
+			StockSample stock = new StockSample();
 			stock.setToday(hairetsu[0]);
 			stock.setOpeningQuotation(hairetsu[1]);
 			stock.setHigh(hairetsu[2]);

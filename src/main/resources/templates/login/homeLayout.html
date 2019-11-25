@@ -27,8 +27,7 @@
 				<div class="col-md-2 sidebar">
 					<ul class="nav nav-pills nav-stacked">
 						<li role="presentaion" sec:authorize="hasRole('ADMIN')"><a th:href="@{'/userList'}">ユーザー管理</a></li>
-						<li role="presentaion" sec:authorize="hasRole('ADMIN')"><a th:href="@{'/admin'}">アドミン用画面</a></li>
-						<li role="presentaion" ><a th:href="@{'/xxx'}">保有資産一覧</a></li>
+						<li role="presentaion" ><a th:href="@{'stockList'}">保有資産一覧</a></li>
 					</ul>
 				</div>
 			</div>

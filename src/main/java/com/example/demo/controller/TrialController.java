@@ -1,9 +1,6 @@
 package com.example.demo.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,7 +11,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.stock.Stock;
+import com.example.demo.stock.sample.StockSample;
 
 @Controller
 public class TrialController {
@@ -31,7 +28,6 @@ public class TrialController {
 			Document document = Jsoup.connect("https://kabutan.jp/stock/kabuka?code="+x+"&ashi=day&page=1").get();
 			Elements elements = document.select("table.stock_kabuka0 tbody");
 			
-			List<Stock> list = new ArrayList<Stock>();
 			
 			String str = null;
 			
@@ -40,7 +36,7 @@ public class TrialController {
 			}
 			
 			String hairetsu[] = str.split(" ");
-			Stock stock = new Stock();
+			StockSample stock = new StockSample();
 			stock.setToday(hairetsu[0]);
 			stock.setOpeningQuotation(hairetsu[1]);
 			stock.setHigh(hairetsu[2]);
@@ -50,7 +46,6 @@ public class TrialController {
 			stock.setDayOverDayChangesPercent(hairetsu[6]);
 			stock.setTurnover(hairetsu[7]);
 			
-			list.add(stock);
 			
 			int a = (int) stock.getKabuka();
 			int total = (a - b) * c;
@@ -62,6 +57,3 @@ public class TrialController {
 		return "/output.html";
     }
 }
-
-			
-		

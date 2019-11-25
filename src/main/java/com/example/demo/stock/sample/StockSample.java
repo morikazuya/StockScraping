@@ -1,6 +1,6 @@
-package com.example.demo.stock;
+package com.example.demo.stock.sample;
 
-public class Stock {
+public class StockSample {
 
 	private String today;//本日
 	private String openingQuotation;//始値

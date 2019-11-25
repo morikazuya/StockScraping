@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.ns/thymeleaf/layout">
+	<head>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div th:fragment="stockDetail_contents">
+			<div class="row">
+				<div class="col-sm-5">
+					<div class="pstockPl-header">
+						<h1>保有銘柄詳細</h1>
+					</div>
+						<form method="post" th:action="@{/stockDetail}" th:object="${registrationForm}">
+							<table class="table table-bordered table-hover">
+								<tr>
+									<th class="active scope=col-md-2">銘柄番号</th>
+									<td class="scope=col-md-3">
+										<div class="form-group" th:classappend="${#fields.hasErrors('stockBrand')} ? 'has-error'">
+											<input type="text" class="form-control" th:field="*{stockBrand}" readonly="readonly" />
+											<span class="text-danger" th:if="${#fields.hasErrors('stockBrand')}" th:errors="*{stockBrand}">stockBrand error</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="active">銘柄</th>
+									<td>
+										<div class="form-group" th:classappend="${#fields.hasErrors('stockName')} ? 'has-error'">
+											<input type="text" class="form-control" th:field="*{stockName}" />
+											<span class="text-danger" th:if="${#fields.hasErrors('stockName')}" th:errors="*{stockName}">stockName error</span>
+										</div> 
+									</td>
+								</tr>
+								<tr>
+									<th class="active">購入額</th>
+									<td>
+										<div class="form-group" th:classappend="${#fields.hasErrors('stockAmount')} ? 'has-error'">
+											<input type="text" class="form-control" th:field="*{stockAmount}" />
+											<span class="text-danger" th:if="${#fields.hasErrors('stockAmount')}" th:errors="*{stockAmount}">stockAmount error</span>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<th class="active">購入数</th>
+									<td>
+										<div class="form-group" th:classappend="${#fields.hasErrors('stockNum')} ? 'has-error'">
+											<input type="text" class="form-control"  th:field="*{stockNum}" />
+											<span class="text-danger" th:if="${#fields.hasErrors('stockNum')}" th:errors="*{stockNum}">stockNum error</span>
+										</div>
+									</td>
+								</tr>
+							</table>
+								<button class="btn btn-primary btn-lg pull-right" type="submit" name="update">更新</button>
+								<button class="btn btn-danger btn-lg " type="submit" name="delete">削除</button>
+						</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
