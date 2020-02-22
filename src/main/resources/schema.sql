@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS m_user(
 
 /* 株マスタ */
 CREATE TABLE IF NOT EXISTS m_stock(
-	stock_brand VARCHAR(4) PRIMARY KEY,
+	stock_brand VARCHAR(10) PRIMARY KEY,
 	stock_name VARCHAR(50),
 	stock_amount INT,
 	stock_num INT,

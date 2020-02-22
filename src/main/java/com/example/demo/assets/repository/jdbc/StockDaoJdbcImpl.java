@@ -24,7 +24,7 @@ public class StockDaoJdbcImpl implements StockDao {
 	@Override
 	public int count() throws DataAccessException {
 		// 全件取得してカウント
-		int count = jdbc.queryForObject("SELECT COUNT( * ) FROM m_stock　", Integer.class);
+		int count = jdbc.queryForObject("SELECT COUNT( * ) FROM m_stock", Integer.class);
 		
 		return count;
 	}
@@ -32,7 +32,7 @@ public class StockDaoJdbcImpl implements StockDao {
 
 	public int sum() throws DataAccessException {
 		// 全件取得してカウント
-		int sum = jdbc.queryForObject("SELECT COALESCE(SUM(stock_Pl), 0) FROM m_stock ", Integer.class);
+		int sum = jdbc.queryForObject("SELECT COALESCE(SUM(stock_Pl), 0) FROM m_stock", Integer.class);
 			
 		return sum;
 	}

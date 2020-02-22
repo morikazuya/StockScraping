@@ -28,7 +28,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private DataSource datasource;
 	
 	//ユーザーIDとパスワードを取得するSQL文
-	private static final String USER_SQL = "SELECT　"
+	private static final String USER_SQL = "SELECT "
 			+ "user_id, "
 			+ "password, "
 			+ "true "
@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 			+ "user_id = ?";
 	
 	//ユーザーのロールを取得するSQL文
-	private static final String ROLE_SQL = "SELECT　"
+	private static final String ROLE_SQL = "SELECT "
 			+ "user_id, "
 			+ "role "
 			+ "FROM "
