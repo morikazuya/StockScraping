@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.ns/thymeleaf/layout">
+	<head>
+		<meta charset="UTF-8">
+		<title>チャート比較</title>
+	</head>
+	<body>
+		<div th:fragment="chartHome_contents">
+			<div class="page-header">
+			</div>
+			<div class="col-sm-10">	
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+				<canvas id="line-chart"></canvas>
+				<script>
+				  var context = document.getElementById('line-chart').getContext('2d');
+				  var line_chart = new Chart(context, {
+				    type:'line', // グラフのタイプを指定
+				    data:{
+				      labels:['2019-01-04','2019-12-30'], // グラフ下部のラベル
+				      datasets:[
+				        {label:'日経平均株価',  // データのラベル
+				          data:[0,3], // グラフ化するデータの数値
+				          fill:false, // グラフの下部を塗りつぶさない
+				          borderColor:'rgb(54, 162, 235)'} // 線の色
+				      ]
+				    },
+				    options:{
+				      scales:{
+				        yAxes:[{
+				          ticks:{
+				            min:-5, // グラフの最小値
+				            max: 5 // グラフの最大値
+				          }
+				        }]
+				      },
+				      elements:{
+				        line:{
+				          tension: 0 // 線グラフのベジェ曲線を無効にする
+				        }
+				      }
+				    }
+				  });
+				</script>
+			</div>	
+		</div>
+	</body>
+</html>

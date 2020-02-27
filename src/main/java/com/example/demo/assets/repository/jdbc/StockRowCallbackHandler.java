@@ -17,7 +17,7 @@ public class StockRowCallbackHandler implements RowCallbackHandler {
 		try {
 			
 			// ファイルの書き込み準備
-			File file = new File("sample_stock.csv");
+			File file = new File("my_stock.csv");
 			FileWriter fw = new FileWriter(file.getAbsoluteFile());
 			BufferedWriter bw = new BufferedWriter(fw);
 			

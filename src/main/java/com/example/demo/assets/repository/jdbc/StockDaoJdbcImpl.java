@@ -29,7 +29,7 @@ public class StockDaoJdbcImpl implements StockDao {
 		return count;
 	}
 	//損益額合計を取得
-
+	@Override
 	public int sum() throws DataAccessException {
 		// 全件取得してカウント
 		int sum = jdbc.queryForObject("SELECT COALESCE(SUM(stock_Pl), 0) FROM m_stock", Integer.class);
@@ -78,7 +78,7 @@ public class StockDaoJdbcImpl implements StockDao {
 	//  テーブルの全データを取得
 	@Override
 	public List<Stock> selectMany() throws DataAccessException {
-		// M_USER テーブルのデータを全件取得
+		// M_stock テーブルのデータを全件取得
 		List<Map<String, Object>> getList = jdbc.queryForList("SELECT * FROM m_stock");
 		// 結果返却用の変数
 		List<Stock> stockList = new ArrayList<>();
@@ -101,8 +101,6 @@ public class StockDaoJdbcImpl implements StockDao {
 	//  テーブルを1件更新
 	@Override
 	public int updateOne(Stock stock) throws DataAccessException {
-		//パスワード暗号化
-		//String password = passwordEncoder.encode(user.getPassword());
 		// 1件更新
 		String sql = "UPDATE m_stock "
 				+ "SET "
@@ -131,7 +129,7 @@ public class StockDaoJdbcImpl implements StockDao {
 	// SQL 取得結果をサーバーに CSV で保存
 	@Override
 	public void stockCsvOut() throws DataAccessException {
-		// M_USER テーブルのデータを全件取得する SQL
+		// M_stock テーブルのデータを全件取得する SQL
 		String sql = "SELECT * FROM m_stock";
 		// ResultSetxtractor の生成
 		StockRowCallbackHandler handler = new StockRowCallbackHandler();

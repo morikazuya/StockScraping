@@ -1,10 +1,3 @@
-/* 従業員テーブル */
-CREATE TABLE IF NOT EXISTS employee(
-	employee_id INT PRIMARY KEY,
-	employee_name VARCHAR(50),
-	age INT
-);
-
 
 /* ユーザーマスタ */
 CREATE TABLE IF NOT EXISTS m_user(
@@ -25,4 +18,18 @@ CREATE TABLE IF NOT EXISTS m_stock(
 	stock_num INT,
 	stock_pl INT,
 	stock_hold BOOLEAN
+);
+
+/* 株価データ　*/
+CREATE TABLE IF NOT EXISTS stock_prices(
+    stock_code VARCHAR(10),
+    company_name VARCHAR(50),
+    trading_date DATE,
+    opening_price DOUBLE,
+    high_price DOUBLE,
+    low_price DOUBLE,
+    closing_price DOUBLE,
+    stock_production DOUBLE,
+    adjustment_closing_price DOUBLE,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY
 );

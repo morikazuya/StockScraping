@@ -24,7 +24,7 @@ import com.example.demo.assets.model.Stock;
 import com.example.demo.assets.service.StockService;
 
 @Controller
-public class StockHomeController {
+public class StockController {
 
 	@Autowired
 	StockService stockService;
