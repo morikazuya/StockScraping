@@ -7,5 +7,5 @@ import com.example.demo.chart.model.Chart;
 public interface ChartDao {
 	
 	// テーブルの日付（MIN,MAX）取得
-	public Chart selectDate(String year) throws DataAccessException;
+	public Chart selectCriteria(String year) throws DataAccessException;
 }

@@ -5,31 +5,46 @@
 		<title>チャート比較</title>
 	</head>
 	<body>
-		<div th:fragment="chartHome_contents">
+		<div th:fragment="chart_contents">
 			<div class="page-header">
 			</div>
-			<div class="col-sm-10">	
+			<form method="post" th:action="@{/chart}" th:object="${chartController}">		
+				<p>比較する年を選択</p>
+				<p>
+				<select name="year" size="1">
+				<option value="2019">2019年</option>
+				</select>
+				
+				</p>
+			</form>
+			
+			
+			<div class="col-sm-8">	
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 				<canvas id="line-chart"></canvas>
-				<script>
+				<script type="text/javascript" th:inline="Javascript">
 				  var context = document.getElementById('line-chart').getContext('2d');
 				  var line_chart = new Chart(context, {
 				    type:'line', // グラフのタイプを指定
 				    data:{
-				      labels:['2019-01-04','2019-12-30'], // グラフ下部のラベル
+				      labels:[[ ${label1} ]], // グラフ下部のラベル
 				      datasets:[
 				        {label:'日経平均株価',  // データのラベル
-				          data:[0,3], // グラフ化するデータの数値
+				          data:[[ ${point1} ]], // グラフ化するデータの数値
 				          fill:false, // グラフの下部を塗りつぶさない
-				          borderColor:'rgb(54, 162, 235)'} // 線の色
+				          borderColor:'rgb(54, 162, 235)'}, // 線の色
+			         	{label:'ポートフォリオ',  // データのラベル
+				          data:[[ ${point2} ]], // グラフ化するデータの数値
+				          fill:false, // グラフの下部を塗りつぶさない
+				          borderColor:'rgb(60, 190, 20)'} // 線の色
 				      ]
 				    },
 				    options:{
 				      scales:{
 				        yAxes:[{
 				          ticks:{
-				            min:-5, // グラフの最小値
-				            max: 5 // グラフの最大値
+				            min:-25, // グラフの最小値
+				            max: 25 // グラフの最大値
 				          }
 				        }]
 				      },

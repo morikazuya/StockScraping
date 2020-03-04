@@ -66,7 +66,7 @@ public class StockService {
 	public boolean updateOne(Stock stock) {
 		// 1件更新
 		int rowNumber = dao.updateOne(stock);
-		// 判定用変数
+		//判定用変数
 		boolean result =false;
 		if(rowNumber > 0) {
 			// update 成功
