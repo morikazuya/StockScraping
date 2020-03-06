@@ -37,9 +37,6 @@ public class ChartDaoJdbcImpl implements ChartDao{
 		chart.setCriteriavalue((double)map2.get("closing_price"));
 		chart.setComparsionValue((double)map3.get("closing_price"));
 		
-		System.out.println(chart.getCriteriavalue());
-		System.out.println(chart.getComparsionValue());
-		
 		return chart;
 	}
 		

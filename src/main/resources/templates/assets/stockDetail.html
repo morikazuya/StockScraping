@@ -16,7 +16,7 @@
 									<th class="active scope=col-md-2">銘柄番号</th>
 									<td class="scope=col-md-3">
 										<div class="form-group" th:classappend="${#fields.hasErrors('stockBrand')} ? 'has-error'">
-											<input type="text" class="form-control" th:field="*{stockBrand}" readonly="readonly" />
+											<input type="text" class="form-control" th:field="*{stockBrand}" readonly="readonly" placeholder="0000" />
 											<span class="text-danger" th:if="${#fields.hasErrors('stockBrand')}" th:errors="*{stockBrand}">stockBrand error</span>
 										</div>
 									</td>
@@ -25,7 +25,7 @@
 									<th class="active">銘柄</th>
 									<td>
 										<div class="form-group" th:classappend="${#fields.hasErrors('stockName')} ? 'has-error'">
-											<input type="text" class="form-control" th:field="*{stockName}" />
+											<input type="text" class="form-control" th:field="*{stockName}" placeholder="株式会社ｘｘｘ"/>
 											<span class="text-danger" th:if="${#fields.hasErrors('stockName')}" th:errors="*{stockName}">stockName error</span>
 										</div> 
 									</td>
@@ -34,7 +34,7 @@
 									<th class="active">購入額</th>
 									<td>
 										<div class="form-group" th:classappend="${#fields.hasErrors('stockAmount')} ? 'has-error'">
-											<input type="text" class="form-control" th:field="*{stockAmount}" />
+											<input type="text" class="form-control" th:field="*{stockAmount}" placeholder="3000"　/>
 											<span class="text-danger" th:if="${#fields.hasErrors('stockAmount')}" th:errors="*{stockAmount}">stockAmount error</span>
 										</div>
 									</td>
@@ -43,7 +43,7 @@
 									<th class="active">購入数</th>
 									<td>
 										<div class="form-group" th:classappend="${#fields.hasErrors('stockNum')} ? 'has-error'">
-											<input type="text" class="form-control"  th:field="*{stockNum}" />
+											<input type="text" class="form-control"  th:field="*{stockNum}" placeholder="100" />
 											<span class="text-danger" th:if="${#fields.hasErrors('stockNum')}" th:errors="*{stockNum}">stockNum error</span>
 										</div>
 									</td>
@@ -52,6 +52,11 @@
 								<button class="btn btn-primary btn-lg pull-right" type="submit" name="update">更新</button>
 								<button class="btn btn-danger btn-lg " type="submit" name="delete">削除</button>
 						</form>
+						<br />
+						<a th:href="@{'/stockList'}">一覧へ戻る</a>
+						<br />
+						<br />
+						<a th:href="@{'/index'}">トップページへ</a>
 				</div>
 			</div>
 		</div>
