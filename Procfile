@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* StockScrapingApplication
+web: java $JAVA_OPTS -jar target/*.jar --server.port=$PORT --spring.profiles.active=heroku
