@@ -15,8 +15,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
@@ -113,27 +111,15 @@
 	<profiles>
         <profile>
             <build>
-			<plugins>
-			  <plugin>
-			    <artifactId>maven-assembly-plugin</artifactId>
-			    <version>3.0.0</version>
-			    <executions>
-			      <execution>
-			        <id>make-assembly</id>
-			        <phase>package</phase>
-			        <goals>
-			          <goal>single</goal>
-			        </goals>
-			      </execution>
-			    </executions>
-			    <configuration>
-			      <descriptorRefs>
-			        <descriptorRef>jar-with-dependencies</descriptorRef>
-			      </descriptorRefs>
-			      <archive><manifest><mainClass>com.example.demo.StockScrapingApplication</mainClass></manifest></archive>
-			    </configuration>
-			  </plugin>
-			</plugins>
+				<plugins>
+			        <plugin>
+			            <groupId>org.springframework.boot</groupId>
+			            <artifactId>spring-boot-maven-plugin</artifactId>
+			            <configuration>
+			                <executable>true</executable>
+			            </configuration>
+			        </plugin>
+			    </plugins>
 			</build>
         </profile>
     </profiles>
